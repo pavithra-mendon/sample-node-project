@@ -1,13 +1,11 @@
 //importing node framework
-var express = require('express');
+const express = require('express');
 const bodyParser = require("body-parser");
-var app = express();
+const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Respond with "hello world" for requests that hit our root "/"
 app.get('/', (req, res) => {
-  // var user = {user_id:1, user_name:'abc'}
   res.send({
     responseCode:200,
     responseMessage:'Everything worked as expected',
@@ -25,6 +23,9 @@ app.post('/', (req,res)=>{
   });
 })
 //listen to port 3000 by default
-app.listen(3000);
+const server = app.listen(3000, () => console.log(`Listening to http://localhost:${3000}`));
  
-module.exports = app;
+module.exports = {
+  app:app,
+  server:server
+};
