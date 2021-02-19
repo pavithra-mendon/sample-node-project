@@ -17,7 +17,7 @@ app.post('/', (req,res)=>{
 
   const userId = Number(req.body.userId);
   res.send({
-    responseCode:200,
+    responseCode:201,
     responseMessage:'Everything worked as expected',
     responseData: {user_id:userId}
   });
