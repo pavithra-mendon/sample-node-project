@@ -21,7 +21,7 @@ describe('POST /', function() {
     request(app).post('/').send({'userId':1}).expect({
       responseCode:200,
       responseMessage:'Everything worked as expected',
-      responseData: {user_id:1}
+      responseData: {user_id:2}
     }, done);
   });
 });
